@@ -1,0 +1,46 @@
+<div id="bg2">
+
+  <div class="container">
+    <h1 mat-dialog-title>ADD DISTRIBUTOR</h1>
+    <small>All * feilds are required</small>
+    <p>&nbsp;</p>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+            
+        <mat-form-field>  
+            <input #name="ngModel" matInput placeholder="Enter Username" minlength="4" maxlength="15" [class.is-invalid]="name.invalid && name.dirty" name="uname" type="text"  required [(ngModel)]=userModel.name>
+     </mat-form-field>
+      
+        <div class="form-group">
+     
+        <mat-form-field>  
+        <input type="tel" matInput #phone="ngModel"  style="display: inline;" placeholder="Enter Phone" [class.is-invalid]="phone.invalid && phone.dirty"  required [(ngModel)]=userModel.phone name="phone">
+          <span matPrefix>+91</span>
+      </mat-form-field>
+      </div>
+      <div class="form-group">
+          <mat-form-field>  
+        <input #email="ngModel" placeholder="Enter Email" matInput  type="email"  [class.is-invalid]="email.invalid && email.dirty" required name="email" [(ngModel)]=userModel.email>
+      
+          </mat-form-field>  
+
+      </div>
+      <div class="form-group">
+        <mat-form-field> 
+        <input type="text" matInput placeholder="Location" required name="location" [(ngModel)]=userModel.location>
+      </mat-form-field> 
+      </div>
+      <div class="form-group">
+        <label>Add Branches</label><br>
+        <input #Branches="ngModel" type="file" required name="branches" [(ngModel)]=userModel.branches>
+      </div>
+      <div class="form-group">
+        <label>Add Certificate</label><br>
+        <input #certificate="ngModel" type="file" name="certificate" required [(ngModel)]=userModel.certificate>
+      </div>
+    
+      <div style="text-align:center">
+        <button mat-button type="submit" [disabled]="!userForm.valid" >Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

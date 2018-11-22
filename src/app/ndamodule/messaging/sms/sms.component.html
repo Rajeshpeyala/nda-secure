@@ -1,0 +1,40 @@
+<div class="container-fluid">
+
+  <h1>Messaging</h1>
+  <hr>
+<div class="container">
+  <h2>SMS</h2>
+
+  <form>
+    <div class="row">
+      <div class="col-1">
+        To:
+      </div>
+      <div class="col-11">
+        <select class="form-control" name="SMSTo" [(ngModel)]="SMSTo" >
+          <option value="{{userSMSArrayA}}">All Approved Users</option>
+          <option value="{{userSMSArrayReg}}">All Registered User</option>
+          <option value="{{userSMSArrayRej}}">All Rejected User</option>
+          <option *ngFor="let userSMSA of userSMSArrayA" value="{{userSMSA}}" selected="selected">{{userSMSA}}</option>
+          <option *ngFor="let userSMSReg of userSMSArrayReg" value="{{userSMSReg}}">{{userSMSReg}}</option>
+          <option *ngFor="let userSMSRej of userSMSArrayRej" value="{{userSMSRej}}">{{userSMSRej}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1">
+        Message:
+      </div>
+      <div class="col-11">
+        <textarea name="message" rows="10" class="form-control" [(ngModel)]="message"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-11 submitBtn">
+        <button type="button" class="btn btn-outline-dark" (click)="sendSMS();">Send</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

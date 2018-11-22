@@ -1,0 +1,68 @@
+
+  <div class="container-fluid">
+
+      <h1>Users</h1>
+      <hr>
+    
+      <div class="container-fluid">
+          <h3>DISTRUBUTERS</h3>
+      <hr>
+
+  <div class="container-fluid">
+
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+    <div class="ScrollStyle" [@listStagger]="distrubuterarray">
+      <table class=" table table-striped table-bordered">
+
+        <thead id="head">
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Location</th>
+            <th>Branches</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let product of distrubuterarray | paginate: { itemsPerPage: 10, currentPage: p };index as j">
+
+          <td>
+            {{j+1}}
+          </td>
+          <td>
+            {{product.distributorName|uppercase}}
+          </td>
+          <td>
+            {{product.distributorId}}
+          </td>
+          <td>
+            {{product.email}}
+          </td>
+          <td>
+            {{product.countryCode}}-{{product.mobileNo}}
+          </td>
+          <td>
+            {{product.distributorLocation}}
+          </td>
+          <td (click)="viewBranches(j,product.distributorName)">
+            <i class="material-icons">
+              device_hub
+            </i>
+          </td>
+          <td><i class="material-icons">
+              border_color
+            </i></td>
+          <td class="delete"><i class="material-icons">
+              delete
+            </i></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,1 +1,348 @@
-/* You can add global styles to this file, and also import other style files */
+body,html{
+    height:100%;
+
+}
+
+h1{
+    color: #000;
+    text-shadow: 3px 3px  rgba(0, 0, 0, 0.1),2px 2px 3px rgba(0,0,0,.10);
+}
+h3{
+
+    flex:1;
+    color: slategray;
+
+}
+.maincontainer
+{
+min-height: 100%;
+padding-bottom: 60px;
+}
+.containermain{
+overflow: auto;
+
+}
+.margin{
+    position: relative;
+    height: 60px;
+    margin-top: -60px !important;
+    clear: both;
+}
+.full-list-titles
+{
+    list-style: none;
+    border-radius: 10px;
+    height: 60px;
+   margin-top: 50px;
+   margin-bottom: 0%;
+    width: 95%;
+    margin-left: 0%;
+    .one-list-element-titles
+    {
+        height: 100%;
+        .child-list-titles
+        {
+            list-style: none;
+            padding: 10px;
+            height: 60px;
+            display: flex;
+            padding-top: 5px;
+            margin-top: 10px;
+            background-color:#2b3164;
+
+           
+         
+           li{
+               flex: 1;
+                 height: inherit;
+                 text-align: center;
+                font-weight: 300;
+                 font-size: 1em;
+                 font-family: 'Courier New', Courier, monospace;
+                 color: aliceblue;
+                 overflow: hidden;
+                  margin-top: 1%; 
+                  margin-left: 5px;
+                  max-width: 600px;
+                 display: inline-block;
+        
+           }
+        }
+    }
+}
+.full-list
+{
+    list-style: none;
+    width: 95%;
+    margin-left: 0%;
+   margin-bottom: -1%;
+
+ 
+    .one-list-element
+    {
+        height: 100%;
+        .child-list
+        {
+            list-style: none;
+            padding: 10px;
+            height: 90px;
+      
+            margin-bottom: 0%;
+            display: flex;
+            padding-top: 5px;
+        
+            img{
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              justify-content: center;
+              align-self: center;
+        
+             }
+
+           li{
+               flex: 1;
+                 height: inherit;
+                 text-align: center;
+                 margin-left: 5px;
+                 color: #222;
+                 max-width: 600px;
+                font-family: 'Montserrat', sans-serif;
+                 font-size: .80em;
+                 display: inline-block;
+                p{
+                    margin-top: 15px;
+                }
+        
+                 i{
+                    margin-top: 15px;
+                    color: #222;
+                 }
+                i:hover{
+                     cursor: pointer;
+                     transform: scale(1.5);
+                     color: rgb(57, 66, 15);
+                 }
+        
+           }
+        }
+    }
+   
+}
+i{
+    margin-left: 10px;
+    color: #222;
+ }
+i:hover{
+     cursor: pointer;
+     transform: scale(1.5);
+     color: rgb(57, 66, 15);
+ }
+.delete:hover i{
+    color:red !important;
+    pointer-events: none;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.full-list:nth-child(odd)  .child-list
+{
+    background-color: #ccc;
+
+}
+.full-list:nth-child(even)  .child-list
+{
+    background-color: #bbb;
+ 
+}
+.child-list:hover{
+    background-color: #222;
+}
+@media(max-width:876px)
+{
+    .container-fluid
+    {
+        width: 100vw;
+        overflow: hidden;
+        padding: 0px;
+    }
+    h1{
+        font-size: 19px;
+        padding: 10px;
+    }
+    h3{
+        font-size: 29px;
+        padding: 10px;
+    }
+    .titles
+    {
+        font-size: 14px;
+        font-style: bold;
+        display: flex;
+        padding-left: 10px;
+        height: 100px;
+        list-style: none;
+        li{
+            flex: 1;
+            
+        }
+      
+    }
+    .full-list-titles{
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        height: 50px !important;
+       
+        .child-list-titles
+        {
+            font-size: 10px;
+    
+        }
+    }
+    .full-list
+    {
+        font-size: 16px;
+        margin: 0%;
+        width: 100%;
+        padding: 0%;
+     
+        .one-list-element
+        {
+
+            
+            .child-list
+            {
+             height: auto;
+                list-style: none;
+                padding: 0%;
+                display: grid;
+                 grid-template-columns: repeat(2, 1fr);
+                padding-top: 5px;
+                margin-top: 5px;  
+                li{
+                  
+                    text-align: center;
+                   
+    
+                }
+                img{
+                  
+            width: 35px;
+            height: 35px;
+
+            border-radius: 50%;
+            margin: 5px 5px 0px 0px;
+           }
+        }
+    }
+    }
+    #mainbg
+    {
+    background-position: center;
+    position: fixed;
+    top: 30% !important;
+    left: 17% !important;
+    }
+}
+
+#bg
+{
+  background-color: #ddd;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
+  -webkit-clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 70%, 70% 100%, 0 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 70%, 70% 100%, 0 100%, 0% 70%, 0% 30%);
+}
+#mainbg
+{
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+    background-position: center;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
+#bg2
+{
+    padding: 10%;
+    margin: 0%;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+}
+.spacermain
+{
+    height: 100px;
+    display: flex;
+    .spacer{
+        flex: 1 1 auto;
+    }
+    img
+    {
+        width: 55px;
+        height: 55px;
+        box-shadow: 3px 3px 3px 3px #999;
+        border-radius: 50%;
+        position: relative;
+        right: 10%;
+        top: 10%;
+    }
+}
+.ScrollStyle
+{
+    max-height: 700px;
+    overflow-y: scroll;
+    padding-bottom: 60px;
+}
+///New Styles //
+td>
+img{
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 50%;
+}
+.example-form {
+    min-width: 150px;
+    width: 98%;
+    margin: 20px;
+    .mat-flat-button{
+        margin-left: 4%;
+    }
+  }
+  
+  .example-full-width {
+    width: 40%;
+  }
+  .firstbutton
+  {
+      margin-right: 20%;
+  }
+
+  #head{
+    background-color: #2b3164;
+    color: white;
+}
+  .heading{
+      color: #255795;
+      margin:30px 0 10px 20px;
+  }
+
+.modal-dialog {
+    margin: 2px auto;
+    z-index: 1100 !important;
+}
+.container-fluid{
+    padding: 20px;
+}
+.mat-form-field{
+    padding-left: 60px;
+}

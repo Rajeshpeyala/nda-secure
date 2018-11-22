@@ -1,0 +1,17 @@
+.titlesline
+{
+    display: flex;
+    .spacer
+    {
+        flex:1 1 auto;
+    }
+    img{
+        width: 55px;
+        height: 55px;
+        box-shadow: 3px 3px 3px 3px #999;
+        border-radius: 50%;
+        position: relative;
+        right: 10%;
+     }
+       
+}

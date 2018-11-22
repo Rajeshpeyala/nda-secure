@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h1>Scan-Management</h1>
+  <hr>
+
+  <div class="container-fluid">
+    <h3>Scans</h3>
+      <hr>
+      <div class="container-fluid">
+  
+        <mat-tab-group>
+            <mat-tab label="Successful Scans"><app-no-bar-code-scans></app-no-bar-code-scans> </mat-tab>
+            <mat-tab label="Mismatched Scans"> <app-mismatched-scans></app-mismatched-scans> </mat-tab>
+            <mat-tab label="No Barcode Exists Scans"> <app-nonassignedconsignment></app-nonassignedconsignment> </mat-tab>
+          </mat-tab-group>
+          
+         
+          <router-outlet></router-outlet>
+    
+      </div>
+  </div>

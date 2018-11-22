@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <h1>{{company.manufacturerName}}</h1>
+  <hr>
+  <div class="spacermain"> <div class="spacer"></div> <img (click)="adddist()" role="button" src="../../../../assets/images/edit icon.png" alt="add" title="Edit Details"></div>
+  <div class="main">
+      <div class="box">
+          <h4>Company's Details</h4>
+          <img src="{{manulogo}}" class="ball">
+          <ul class="details">
+  
+              <li class="details-item">
+                  <div class="titles">
+                      Address
+                  </div>
+                  <p>
+                      {{company.address}}
+                  </p>
+              </li>
+              <li class="details-item">
+                  <div class="titles">
+                      City
+                  </div>
+                  <p>
+                      {{company.city}}
+                  </p>
+              </li>
+              <li class="details-item">
+                  <div class="titles">
+                      Phone
+                  </div>
+                  <p>
+                      {{company.manufacturerPhone}}
+
+                  </p>
+              </li>
+              <li class="details-item">
+                  <div class="titles">
+                      Email
+                  </div>
+                  <p>
+                      {{company.email}}
+                  </p>
+              </li>
+
+
+          </ul>
+      </div>
+
+      <div class="box">
+          <h4>Concern Person's Details</h4>
+          <img src="{{propic}}" class="ball">
+          <div>
+              <ul class="details" >
+                  <li class="details-item">
+                      <div class="titles">
+                          Name
+                      </div>
+                      <p>
+                          {{company.concernPersonName}}
+                      </p>
+                  </li>
+
+                  <li class="details-item">
+                      <div class="titles">
+                          Phone
+                      </div>
+                      <p>
+                          {{company.concernPersonPhone}}
+
+                      </p>
+                  </li>
+                  <li class="details-item">
+                    <div class="titles">
+                        Verification Status
+                    </div>
+                    <p *ngIf="verified" style="color: green">
+                        Verified
+                    </p>
+                    <p *ngIf="!verified" style="color: red">
+                        Not-Verified
+                    </p>
+                </li>
+                  <li class="details-item">
+                      <div class="titles">
+                          Email
+                      </div>
+                      <p>
+                          {{company.concernPersonEmail}}
+                      </p>
+                  </li>
+                  
+              </ul>
+          </div>
+
+      </div>
+      <div class="lastrow">
+          <p>Number of Products added:</p>
+          <p>{{productsAdded}}</p>
+          <p style="color:red">{{errormsg.message}}</p>
+      </div>
+  </div>
+</div>

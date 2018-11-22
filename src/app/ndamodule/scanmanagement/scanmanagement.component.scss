@@ -1,0 +1,31 @@
+.mat-tab-link{
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    width: 50%;
+    font-size: 28px;
+    font-weight: 700;
+        text-decoration: none !important;
+}
+
+/* Styles for the active tab label */
+
+
+@media(max-width:776px)
+{
+    .spacermain
+    {
+        height: 35px;
+        img
+        {
+            width: 35px;
+            height: 35px;
+            box-shadow: 3px 3px 3px 3px #999;
+            border-radius: 50%;
+            position: relative;
+            right: 2%;
+            top: 0px;
+         
+        }
+    }
+}

@@ -1,0 +1,63 @@
+
+
+<div class="container-fluid">
+    <h1>Dashboard</h1>
+    <hr>
+  
+    
+    <div class="main">
+        <!--carousal-->
+        
+        <div class="topline" [@listStagger]="boxes">
+            <div class="topline" *ngFor="let box of boxes;index as i">
+                <div class="boxwrapper">
+                    <div class="box" (click)="expand(i)">
+                        <div class="titles">
+                            <img class="ball" src="{{box.img}}">
+                            <div class="details" [ngSwitch]=i>
+                                <strong *ngSwitchCase="0">{{response$.data.TotalCompanies}}{{box.title}}</strong>
+                                <strong *ngSwitchCase="1">{{response$.data.TotalAddedProducts}}{{box.title}}</strong>
+                                <strong *ngSwitchCase="2">{{response$.data.TotalScans}}{{box.title}}</strong>
+                                <strong *ngSwitchCase="3">{{response$.data.TotalFailures}}{{box.title}}</strong>
+                                <div class="records">
+                                    <div>Today</div>
+                                    <div>This Week </div>
+                                    <div>This Month </div>
+                                </div>
+                                <div class="values" *ngSwitchCase="0">
+                                    <div>{{response$.data.OneDayCompanies}}</div>
+                                    <div>{{response$.data.ThisWeekCompanies}}</div>
+                                    <div>{{response$.data.ThisMonthCompanies}}</div>
+                                </div>
+                                <div class="values" *ngSwitchCase="1">
+                                    <div>{{response$.data.OneDayAddedProducts}}</div>
+                                    <div>{{response$.data.ThisWeekAddedProducts}}</div>
+                                    <div>{{response$.data.ThisMonthAddedProducts}}</div>
+                                </div>
+                                <div class="values" *ngSwitchCase="2">
+                                    <div>{{response$.data.OneDayScans}}</div>
+                                    <div>{{response$.data.ThisWeekScans}}</div>
+                                    <div>{{response$.data.ThisMonthScans}}</div>
+                                </div>
+                                <div class="values" *ngSwitchCase="3">
+                                    <div>{{response$.data.OneDayFailures}}</div>
+                                    <div>{{response$.data.ThisWeekFailures}}</div>
+                                    <div>{{response$.data.ThisMonthFailures}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="secondline">
+            <ul>
+                <li>
+                   <app-pie-chart></app-pie-chart>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

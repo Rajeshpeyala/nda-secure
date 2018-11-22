@@ -1,0 +1,19 @@
+<div id="bg1">
+  <div id="vh" class="box animated flipInY">
+    <form>
+    <h1 class="loginHeading" style="text-align: center;">LOGIN</h1>
+    <img src="../../assets/images/user_pic.png" class="useImg">
+    <input autocomplete="off" placeholder="User Name" class="enterData" name="userName" [(ngModel)]='user.userName'>
+    <input [type]="toggleText" id="myInput" autocomplete="off" placeholder="Password" class="enterData" name="password" [(ngModel)]='user.password'>
+    <input style="margin-left:20px" type="checkbox" (click)="showPassword()">&nbsp; <span id="showPwd">Show Password</span> <br>
+    <p *ngIf="loginError" class="errorMsg">Please try again</p>
+    <button type="submit" mat-button class="loginSubmit" (click)="getLogin()">login</button>
+  </form>
+
+    <!-- <div *ngIf="loginError" class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+     Please try again
+    </div> -->
+  </div>
+ 
+</div>

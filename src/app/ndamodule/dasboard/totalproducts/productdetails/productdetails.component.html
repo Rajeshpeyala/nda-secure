@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <h1>Products</h1>
+  <hr>
+  <div class="container-fluid">
+    <h3>Product's Details</h3>
+    <hr>
+    <div class="box">
+      <ul class="images">
+        <li> <img style="border-radius:50%;width:100px;height:100px;" src="{{manulogo}}" alt="{{productdetail.manufacturerName}}'s logo"
+            title="{{productdetail.manufacturerName}}"></li>
+        <li><img style="position: relative;right: 14%" src="{{medicinepic}}" alt="{{productdetail.medicineName}}" title="{{productdetail.medicineName}}"></li>
+      </ul>
+      <div class=".scrollView">
+        <ul class="details" @listStagger>
+          <li class="details-item">
+            <div class="titles">
+              BarCode Number
+            </div>
+            <p>
+              {{productdetail.barcodeNo}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Product Name
+            </div>
+            <p>
+              {{productdetail.medicineName}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Manufacturer's Name
+            </div>
+            <p>
+              {{productdetail.manufacturerName}}
+
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Dosage
+            </div>
+            <p>
+              {{productdetail.dosage}}
+
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Weight
+            </div>
+            <p>
+              {{productdetail.weight}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Date of Manufacture
+            </div>
+            <p>
+              {{productdetail.manufacturingDate}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Ingredients
+            </div>
+            <p>
+              {{productdetail.ingredianDrugs}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Type
+            </div>
+            <p>
+              {{productdetail.catagory}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Quantity
+            </div>
+            <p>
+              {{productdetail.quantity}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Color
+            </div>
+            <p>
+              {{productdetail.colour}}
+            </p>
+          </li>
+          <li class="details-item">
+            <div class="titles">
+              Date of Expiry
+            </div>
+            <p>
+              {{productdetail.expiryDate}}
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

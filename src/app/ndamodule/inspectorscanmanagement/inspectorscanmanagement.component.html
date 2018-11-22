@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+  <h1>Inspector-scan-Management</h1>
+  <hr>
+
+  <div class="container-fluid">
+    <h3>Scans</h3>
+
+    <hr>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <div class="ScrollStyle" [@listStagger]="response$.data">
+       
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <table class=" table table-striped table-bordered">
+
+        <thead id="head">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Mobile no.</th>
+            <th scope="col">Email</th>
+            <th scope="col">GTIN No.</th>
+            <th scope="col">Location</th>
+            <th scope="col">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comp of response$.data| paginate: { itemsPerPage: 10, currentPage: p };index as j">
+            <td *ngIf="comp.profilePic!='N/A'"><img src="{{imgUrl}}{{comp.manufacturerLogo}}" alt="logo"></td>
+            <td *ngIf="comp.profilePic=='N/A'"><img src="../../assets/images/noImg.jpg" alt="logo"></td>
+            <td>{{item.name}}</td>
+            <td>{{item.mobile}}</td>
+            <td>{{item.emial}}</td>
+            <td>{{item.gtinNumber}}</td>
+            <td><a href='https://www.google.com/maps/?q={{item.lattitude}},{{item.longitude}}' target="_blank"><i class="material-icons">
+                  location_on
+                </i></a>
+            </td>
+            <td><i class="material-icons">
+                remove_red_eye
+              </i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

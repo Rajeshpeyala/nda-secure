@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <h1>Total products</h1>
+  <hr>
+  <div class="container-fluid">
+    <h3> Products</h3>
+    <hr>
+    <div class="container-fluid">
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <div class=".ScrollStyle" [@listStagger]="productVar.data">
+      <table class=" table table-striped table-bordered">
+  
+        <thead id="head">
+          <tr>
+      <th>Name</th>
+      <th>Company Name</th>
+      <th>Type</th>
+      <th>Barcode Number</th>
+      <th>Barcode Image</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let product of productVar.data | paginate: { itemsPerPage: 10, currentPage: p };index as j" >
+      
+          <td><p class="transform">{{product.medicineName}}</p></td>
+          <td><p>{{product.manufacturerName}}</p></td>
+          <td><p class="transform">{{product.catagory}}</p></td>
+          <td><p>{{product.barcodeNo}}</p></td>
+          <td><img src="{{imgUrl}}{{product.barcodeImage}}" alt="logo" title="{{product.manufacturerName}}" class="ball"/></td>
+          <td (click)="viewdetails(j,product.manufacturerName)"><i class="material-icons">
+              remove_red_eye
+              </i></td>   </tr>
+            </tbody>
+          </table>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+export interface Companyclass
+{
+            userName: ""
+            password: ""
+            manufacturerName: ""
+            manufacturerProfilePic: ""
+            manufacturerLogo: ""
+            manufacturerPhone: ""
+            manufacturerOtp: ""
+            email: ""
+            address: ""
+            city: ""
+            rejectReason: ""
+            concernPersonName: ""
+            concernPersonPhone: ""
+            concernPersonEmail: ""
+            verificationStatus: ""
+            dateOfCreation: ""
+            dateVerification: ""
+}

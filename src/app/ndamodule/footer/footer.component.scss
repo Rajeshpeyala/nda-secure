@@ -1,0 +1,39 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.margin
+{
+   background-color: #444;
+   color: #FFFfff;
+   overflow: hidden;
+   text-align: center;
+   font-size: 14px;
+   img
+   {
+       width: 5vw;
+       height: 5vh;
+        position: relative;
+        left: 35%;
+        top: -10px;
+   }
+
+}
+@media(max-width:576px)
+{
+    .margin
+{
+    margin-left: 0px;
+    min-height: 30px;
+    font-size: 14px;
+}
+   
+}
+.footer-copyright:hover
+{
+cursor: pointer;
+text-decoration: underline;
+}
+

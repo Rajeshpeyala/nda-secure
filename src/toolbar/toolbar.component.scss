@@ -1,0 +1,52 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+nav{
+    height: 60px;
+    background-color: rgb(188, 203, 231);
+    box-shadow: 0 5px  5px -5px rgb(176, 205, 238);
+    .right{
+        div{
+            float: right;
+            mat-icon{
+                margin: 16px 20px;
+                font-size: 2.6em;
+                cursor: pointer;
+                width: 33px;
+            }  
+            mat-icon:hover{
+                color: rgb(11, 50, 223);
+            }      
+        }
+    }
+}
+
+.notificationMenu{
+    height: 400px;
+    li{
+        list-style: none;
+        .item{
+            padding: 10px;
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
+.item:hover{
+    background-color: rgb(230, 231, 235);
+    transition: .3s ease-in-out;
+    cursor: default
+}
+
+.profileMenu{
+    button{
+        outline: none;
+        font-size: 1em;
+    }
+    button:hover{
+        color: rgb(0, 110, 255);
+    }
+}

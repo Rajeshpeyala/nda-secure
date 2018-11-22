@@ -1,0 +1,59 @@
+@import '../theme.scss';
+
+:host {
+  display: block;
+  outline: none;
+
+  .mat-list-item.active {
+    background-color: rgb(202, 187, 187);
+    color: #000 !important;
+   
+    img{
+        color: rgb(0, 110, 255);
+    }
+    .routeIcon{
+      animation: pop2 200ms ease-in-out forwards;
+      @keyframes pop2{
+        100%{
+          transform: translateX(0px) scale(1.1);;
+        }
+      }
+    }
+   
+   
+  }
+
+  &:hover,
+  &:focus {
+    >.mat-list-item:not(.expanded) {
+      background-color: #ccc;
+      color: rgb(24, 9, 9) !important;
+
+    }
+    .routeIcon{
+      animation: pop2 200ms ease-in-out forwards;
+      @keyframes pop2{
+        100%{
+          transform: translateX(0px) scale(1.1);;
+        }
+      }
+    }
+  }
+}
+
+.mat-list-item {
+  padding: 0 0;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff !important;
+  img{
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+  }
+  .routeIcon {
+    margin-right: 20px;
+  }
+}
+
+

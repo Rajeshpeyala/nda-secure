@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h1>E-Pedigree</h1>
+  <hr>
+
+  <div class="container-fluid">
+    <h3>Consignment data</h3>
+      <hr>
+      <div class="container-fluid">
+  
+         
+          <mat-tab-group>
+            <mat-tab label="Non-assigned"> <app-assignedconsigment></app-assignedconsigment></mat-tab>
+            <mat-tab label="Assigned"> <app-nonassignedconsignment></app-nonassignedconsignment> </mat-tab>
+          </mat-tab-group>
+          
+         
+          <router-outlet></router-outlet>
+    
+      </div>
+  </div>

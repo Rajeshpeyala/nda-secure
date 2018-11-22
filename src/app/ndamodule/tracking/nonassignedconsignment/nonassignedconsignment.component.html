@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <h1>Non-Assigned</h1>
+  <hr>
+
+  <div class="container-fluid">
+    <h3>Consignment data</h3>
+    <hr>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <div class="ScrollStyle" [@listStagger]="response$.data">
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <table class=" table table-striped table-bordered">
+
+        <thead id="head">
+          <tr>
+            <th>GTIN Number</th>
+            <th>Manufacturer Name
+            </th>
+            <th>Batch Number
+            </th>
+            <th>Serial Number</th>
+            <th>Consignment Number </th>
+            <th>Assign</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let product of response$.data| paginate: { itemsPerPage: 10, currentPage: p };index as j">
+
+
+            <td>
+              <p>{{product.gtinNumber}}</p>
+            </td>
+            <td>
+              <p>{{product.manufacturerName}}</p>
+            </td>
+            <td>
+              <p>{{product.batchNumber}}</p>
+            </td>
+            <td>
+              <p>{{product.fromSerialNumber}}-{{product.toSerialNumber}}</p>
+            </td>
+            <td>
+              <p>{{product.consignmentNumber}}</p>
+            </td>
+            <td (click)="viewBranches(j,product.distributorName)">
+              <i class="material-icons">
+                subdirectory_arrow_right
+              </i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

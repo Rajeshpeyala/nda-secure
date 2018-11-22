@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="titlesline">
+      <h1>{{distrubuter.distributorName|uppercase}}</h1>
+    <div class="spacer"></div>
+    <img src="../../../../assets/images/add icon.png" alt="add" title="Add">
+</div>
+  <hr>
+  
+  <div class="container-fluid">
+      <ul class="full-list-titles">
+          <li class="one-list-element-titles">
+            <ul class="child-list-titles">
+              <li>S.No</li>
+              <li>Name</li>
+              <li>Id</li>
+              <li>Email</li>
+              <li>Contact Number</li>
+              <li>Location</li>
+              <li>Edit</li>
+              <li>Delete</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="scrollView">
+            <ul class="full-list" *ngFor="let product of response.data;index as j">
+              <li class="one-list-element">
+                <ul class="child-list">
+                  <li>
+                    <p>{{j+1}}</p>
+                  </li>
+                  <li>
+                    <p>{{product.distributorName}}</p>
+                  </li>
+                  <li>
+                    <p>{{product.distributorId}}</p>
+                  </li>
+                  <li>
+                    <p>{{product.email}}</p>
+                  </li>
+                  <li>
+                    <p>{{product.countryCode}}-{{product.mobileNo}}</p>
+                  </li>
+                  <li>
+                      <p>{{product.distributorLocation}}</p>
+                    </li>
+                  <li (click)="viewBranches(j,product.distributorName)">
+                      <i class="material-icons">
+                          device_hub
+                          </i>
+                  </li>
+                  <li><i class="material-icons">
+                      border_color
+                    </i></li>
+                  <li class="delete"><i class="material-icons">
+                      delete
+                    </i></li>
+                </ul>
+        
+              </li>
+            </ul>
+            </div>
+  </div>
+</div>

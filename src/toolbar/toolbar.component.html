@@ -1,0 +1,31 @@
+<nav>
+  <div class="right">
+    <div class="profile">
+      <mat-icon title="Open Profile" [matMenuTriggerFor]="menu1">person_outline</mat-icon>
+      <mat-menu #menu1="matMenu">
+        <div class="profileMenu">
+          <button mat-menu-item>Admin settings</button>
+          <button mat-menu-item>App settings</button>
+          <hr>
+          <button type="button" mat-button (click)='logout()' class="btn btn-sm">Logout</button>
+        </div>
+      </mat-menu>
+      <!-- <img src="../../../assets/images/userProfile.png" alt="profile"> -->
+    </div>
+    <div class="notification">
+      <mat-icon matBadge="6" [matMenuTriggerFor]="menu" matBadgeColor="warn" title="Open Notifications">notifications_none</mat-icon>
+      <mat-menu #menu="matMenu">
+        <div class="notificationMenu">
+          <li *ngFor="let notification of notifications">
+            <div class="item">
+              <p>{{notification.description}}</p>
+              <small>{{notification.date}}</small>
+            </div>
+            <hr>
+          </li>
+        </div>
+      </mat-menu>
+      <!-- <img src="../../../assets/images/notificationIcon.png" alt="notifications"> -->
+    </div>
+  </div>
+</nav>

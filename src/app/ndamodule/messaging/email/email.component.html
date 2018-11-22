@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+  <h1>Messaging</h1>
+  <hr>
+<div class="container">
+  <h2>Email</h2>
+  <form>
+    <div class="row">
+      <div class="col-1">
+        To:
+      </div>
+      <div class="col-11">
+        <select class="form-control" name="emailTo" [(ngModel)]="emailTo">
+          <option value="{{userEmailArrayA}}">All Approved Users</option>
+          <option value="{{userEmailArrayReg}}">All Registered Users</option>
+          <option value="{{userEmailArrayRej}}">All Rejected Users</option>
+          <option *ngFor="let userEmailA of userEmailArrayA" value="{{userEmailA}}" selected="selected">{{userEmailA}}</option>
+          <option *ngFor="let userEmailReg of userEmailArrayReg" value="{{userEmailReg}}">{{userEmailReg}}</option>
+          <option *ngFor="let userEmailRej of userEmailArrayRej" value="{{userEmailRej}}">{{userEmailRej}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1">
+        Subject:
+      </div>
+      <div class="col-11">
+        <input type="text" class="form-control" name="subject" [(ngModel)]="subject">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+        Message:
+      </div>
+      <div class="col-11">
+        <textarea name="message" cols="30" rows="10" class="form-control" [(ngModel)]="message"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-11 submitBtn">
+        <button type="button" class="btn btn-outline-dark" (click)="sendEmail()">Send</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

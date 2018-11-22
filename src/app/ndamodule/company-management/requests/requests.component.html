@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <h1>Company Management</h1>
+    <hr>
+    <div class="container-fluid">
+        <h3>Requests</h3>
+        <hr>
+    <div class="container-fluid">
+            <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+            <div class=".ScrollStyle" [@listStagger]="response$.data">
+            <table class=" table table-striped table-bordered">
+                    <thead id="head">
+                            <tr>
+<th>Logo</th>
+<th>Name</th>
+<th>Email</th>
+<th>Contact number</th>
+<th>View</th>
+<th>Approve</th>
+<th>Reject</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr *ngFor="let comp of response$.data;index as j"  >
+
+    <td *ngIf="comp.profilePic!='N/A'"><img src="{{imgUrl}}{{comp.manufacturerLogo}}" alt="logo"></td>
+    <td *ngIf="comp.profilePic=='N/A'"><img src="../../assets/images/noImg.jpg" alt="logo"></td>
+    <td><p>{{comp.userName|uppercase}}</p></td>
+    <td><p>{{comp.email}}</p></td>
+    <td><p>{{comp.concernPersonName}}</p></td>
+    <td><p>{{comp.concernPersonPhone}}</p></td>
+    <td><p>{{comp.concernPersonEmail}}</p></td>
+    <td (click)="viewdetails(j,comp.userName)"><i class="material-icons">
+        remove_red_eye
+        </i></td>
+
+
+    </tr>
+
+</tbody>
+</table>
+</div></div></div>
